@@ -1,0 +1,18 @@
+$ python -m unittest discover -s tests -t .
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.010s
+
+OK
+
+$ python run_eval.py --model fake-perfect --cases evals/cases-100.jsonl --quiet --min-score 1.0
+
+fake-perfect-cases-100-x1   spent in this study so far: $0.0000 (cap $1.00)
+
+outcome        100.0%   95% range 100.0% to 100.0%
+looked_first   100.0%   95% range 100.0% to 100.0%
+told_total     100.0%   95% range 100.0% to 100.0%
+all            100.0%   95% range 100.0% to 100.0%
+
+100 cases x 1 runs = 100 runs
+exit code: 0

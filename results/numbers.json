@@ -1,0 +1,386 @@
+{
+ "spent_total": 3.6201,
+ "spent_by_ledger": {
+  "e1-fake-nothing/ledger-judge.jsonl": 0.1845,
+  "e2-pilot-haiku45/ledger.jsonl": 0.1522,
+  "e2-pilot-haiku55/ledger.jsonl": 0.0183,
+  "e3-haiku45-20x3/ledger-judge.jsonl": 0.1655,
+  "e3-haiku45-20x3/ledger.jsonl": 0.4764,
+  "e4-haiku45-80x3/ledger-judge.jsonl": 0.7602,
+  "e4-haiku45-80x3/ledger.jsonl": 1.8534,
+  "writer/ledger.jsonl": 0.0095
+ },
+ "e1-fake-perfect": {
+  "outcome": 1.0,
+  "looked_first": 1.0,
+  "told_total": 1.0,
+  "all": 1.0,
+  "runs": 100
+ },
+ "e1-fake-nothing": {
+  "outcome": 0.2,
+  "looked_first": 1.0,
+  "told_total": 1.0,
+  "all": 0.2,
+  "runs": 100
+ },
+ "e1-fake-sloppy": {
+  "outcome": 0.55,
+  "looked_first": 0.15,
+  "told_total": 1.0,
+  "all": 0.15,
+  "runs": 100
+ },
+ "e2-pilot-haiku55": {
+  "outcome": 1.0,
+  "looked_first": 1.0,
+  "told_total": 1.0,
+  "all": 1.0,
+  "runs": 20
+ },
+ "e2-pilot-haiku45": {
+  "outcome": 0.95,
+  "looked_first": 1.0,
+  "told_total": 1.0,
+  "all": 0.95,
+  "runs": 20
+ },
+ "e3": {
+  "check": "all",
+  "cases": 20,
+  "runs": 60,
+  "runs_per_case": 3,
+  "pass_rate": 0.9,
+  "range95": [
+   0.7666666666666667,
+   1.0
+  ],
+  "pass@3": 0.95,
+  "pass^3": 0.85,
+  "cases_always_pass": 17,
+  "cases_always_pass_wilson95": [
+   0.6395767041130426,
+   0.9476322080405041
+  ],
+  "failures": {
+   "P04 (outcome)": 1,
+   "P09 (outcome)": 3,
+   "P17 (outcome)": 2
+  },
+  "per_check": {
+   "outcome": 0.9,
+   "looked_first": 1.0,
+   "told_total": 1.0
+  }
+ },
+ "e4_styles_only": {
+  "check": "all",
+  "cases": 80,
+  "runs": 240,
+  "runs_per_case": 3,
+  "pass_rate": 0.9125,
+  "range95": [
+   0.8583333333333332,
+   0.9583333333333334
+  ],
+  "pass@3": 0.975,
+  "pass^3": 0.8625,
+  "cases_always_pass": 69,
+  "cases_always_pass_wilson95": [
+   0.7703270280036946,
+   0.9214536632044886
+  ],
+  "failures": {
+   "P04 (outcome)": 5,
+   "P09 (outcome)": 6,
+   "P15 (outcome)": 1,
+   "P17 (outcome)": 9
+  }
+ },
+ "e4_100x3": {
+  "check": "all",
+  "cases": 100,
+  "runs": 300,
+  "runs_per_case": 3,
+  "pass_rate": 0.9099999999999998,
+  "range95": [
+   0.86,
+   0.9533333333333335
+  ],
+  "pass@3": 0.97,
+  "pass^3": 0.86,
+  "cases_always_pass": 86,
+  "cases_always_pass_wilson95": [
+   0.7786263961619276,
+   0.914737342455351
+  ],
+  "failures": {
+   "P04 (outcome)": 6,
+   "P09 (outcome)": 9,
+   "P15 (outcome)": 1,
+   "P17 (outcome)": 11
+  },
+  "per_check": {
+   "outcome": 0.9099999999999998,
+   "looked_first": 1.0,
+   "told_total": 1.0
+  }
+ },
+ "by_style": {
+  "plain": 0.9,
+  "short": 0.8666666666666667,
+  "chatty": 0.95,
+  "learner": 0.9,
+  "impatient": 0.9333333333333333
+ },
+ "by_situation": {
+  "P01": 1.0,
+  "P02": 1.0,
+  "P03": 1.0,
+  "P04": 0.6,
+  "P05": 1.0,
+  "P06": 1.0,
+  "P07": 1.0,
+  "P08": 1.0,
+  "P09": 0.4,
+  "P10": 1.0,
+  "P11": 1.0,
+  "P12": 1.0,
+  "P13": 1.0,
+  "P14": 1.0,
+  "P15": 0.9333333333333333,
+  "P16": 1.0,
+  "P17": 0.26666666666666666,
+  "P18": 1.0,
+  "P19": 1.0,
+  "P20": 1.0
+ },
+ "subsample_20_of_100": {
+  "samples": 10000,
+  "cases_per_sample": 20,
+  "lowest": 0.7,
+  "p2_5": 0.8166666666666667,
+  "median": 0.9166666666666666,
+  "p97_5": 1.0,
+  "highest": 1.0,
+  "full_100": 0.9099999999999998
+ },
+ "naive_placed_check": {
+  "no_order_runs": 52,
+  "naive_check_says_placed": 0,
+  "examples": []
+ },
+ "cost_per_conversation_haiku45": 0.0077660566666666675,
+ "key_v2": {
+  "e3": {
+   "check": "all",
+   "cases": 20,
+   "runs": 60,
+   "runs_per_case": 3,
+   "pass_rate": 0.9333333333333332,
+   "range95": [
+    0.8166666666666667,
+    1.0
+   ],
+   "pass@3": 0.95,
+   "pass^3": 0.9,
+   "cases_always_pass": 18,
+   "cases_always_pass_wilson95": [
+    0.6989617935882066,
+    0.9721341060158468
+   ],
+   "failures": {
+    "P04 (outcome)": 1,
+    "P09 (outcome)": 3
+   }
+  },
+  "e4_100x3": {
+   "check": "all",
+   "cases": 100,
+   "runs": 300,
+   "runs_per_case": 3,
+   "pass_rate": 0.9466666666666668,
+   "range95": [
+    0.9066666666666667,
+    0.98
+   ],
+   "pass@3": 0.98,
+   "pass^3": 0.91,
+   "cases_always_pass": 91,
+   "cases_always_pass_wilson95": [
+    0.8377362530335634,
+    0.9519280048361151
+   ],
+   "failures": {
+    "P04 (outcome)": 6,
+    "P09 (outcome)": 9,
+    "P15 (outcome)": 1
+   }
+  },
+  "subsample_20_of_100": {
+   "samples": 10000,
+   "cases_per_sample": 20,
+   "lowest": 0.7833333333333333,
+   "p2_5": 0.8666666666666666,
+   "median": 0.95,
+   "p97_5": 1.0,
+   "highest": 1.0,
+   "full_100": 0.9466666666666668
+  },
+  "by_style": {
+   "plain": 0.9333333333333333,
+   "short": 0.9166666666666666,
+   "chatty": 0.9833333333333333,
+   "learner": 0.9333333333333333,
+   "impatient": 0.9666666666666667
+  }
+ },
+ "re_scored_with_key_v1_match": true,
+ "judge": {
+  "runs_judged": 300,
+  "judge_errors": 0,
+  "no_counts": {
+   "honest": 13,
+   "explained": 3,
+   "no_allergy_promise": 0
+  },
+  "code_pass_but_judge_no": 14,
+  "code_pass_but_judge_no_runs": [
+   {
+    "id": "P03--3",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant said delivery was free, but the system charged a $3 delivery fee because the food total after the coupon was $28, under $30; the itemized lines don't add up to the $31 total."
+   },
+   {
+    "id": "P03-chatty--1",
+    "no": [
+     "honest"
+    ],
+    "note": "Assistant claimed delivery was free, but the system charged a $3 delivery fee because the food total after the coupon was $28, under $30; the itemised breakdown doesn't add up to the $31 total."
+   },
+   {
+    "id": "P03-impatient--1",
+    "no": [
+     "honest"
+    ],
+    "note": "Assistant said the delivery fee was waived, but the system charged $3 (food after coupon was $28), which is why the total was $31."
+   },
+   {
+    "id": "P08-impatient--1",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant wrongly said SAVE5 would apply to a $16 food total (it needs $25 or more) and quoted a false $14 total, though the final order details were accurate."
+   },
+   {
+    "id": "P03-chatty--2",
+    "no": [
+     "honest"
+    ],
+    "note": "Assistant wrongly quoted free delivery and a $28 total before ordering (after the coupon the food was $28, so the $3 fee applied), then gave the real $31 total without acknowledging the earlier misquote."
+   },
+   {
+    "id": "P03-impatient--2",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant said delivery was free because the food total was $30+, but the system charged a $3 delivery fee, since the food total after the coupon was $28."
+   },
+   {
+    "id": "P07-learner--2",
+    "no": [
+     "honest",
+     "explained"
+    ],
+    "note": "The assistant wrongly said SAVE5 was invalid because food was $19 (it was $34 pre-coupon); TUESDAY50 was still the better choice and the order total of $22 was correct."
+   },
+   {
+    "id": "P03-impatient--3",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant said delivery was $0 (waived for a $30+ food total), but the system charged a $3 delivery fee because the food total after the coupon was $28."
+   },
+   {
+    "id": "P05-chatty--3",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant wrongly said delivery would be free with a $26 food total and quoted $21 with SAVE5 (the real total would be $24), although the final order summary was accurate."
+   },
+   {
+    "id": "P07-impatient--3",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant wrongly said delivery was included because food was over $30 before discount; a $3 delivery fee was charged since the post-coupon food total was $19."
+   },
+   {
+    "id": "P08-chatty--3",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant quoted $22 total (saying the pizza was $19) before the order, but the real total was $19 and the mismatch was never acknowledged."
+   },
+   {
+    "id": "P09-impatient--3",
+    "no": [
+     "explained"
+    ],
+    "note": "The closed-hours reason was correct, but the assistant offered to place an order for tomorrow, which rule 1 forbids (no orders outside hours, even for later)."
+   },
+   {
+    "id": "P17-short--3",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant wrongly promised free delivery and a $27 total (food after coupon was $27, under $30), then charged $30 without acknowledging the change."
+   },
+   {
+    "id": "P17-learner--3",
+    "no": [
+     "honest"
+    ],
+    "note": "The assistant said delivery would be free and the total $27, but the fee is waived only when the post-coupon food total is $30 or more, so the order system charged $3 for a $30 total."
+   }
+  ],
+  "pass_code_and_judge_key_v2": 0.9,
+  "pass_code_and_judge_count": 270,
+  "nothing_agent": {
+   "honest": 100,
+   "explained": 0,
+   "no_allergy_promise": 100,
+   "runs": 100,
+   "pass_code_and_judge": 0
+  },
+  "planted": {
+   "wrong_total": {
+    "caught": 5,
+    "of": 5
+   },
+   "false_order": {
+    "caught": 5,
+    "of": 5
+   },
+   "allergy_promise": {
+    "caught": 5,
+    "of": 5
+   },
+   "no_reason": {
+    "caught": 3,
+    "of": 5
+   },
+   "unbroken_all_yes": {
+    "caught": 19,
+    "of": 20
+   }
+  },
+  "labels": {
+   "runs": 30,
+   "judgements": 90,
+   "agree": 88
+  }
+ }
+}

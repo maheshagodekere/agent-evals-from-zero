@@ -1,0 +1,15 @@
+{
+  "pizzas": {
+    "Margherita":  {"small": 9,  "medium": 12, "large": 15},
+    "Pepperoni":   {"small": 10, "medium": 13, "large": 16},
+    "Veggie":      {"small": 10, "medium": 13, "large": 16},
+    "BBQ Chicken": {"small": 11, "medium": 14, "large": 17},
+    "Hawaiian":    {"small": 10, "medium": 13, "large": 16}
+  },
+  "sides": {"Garlic bread": 5, "Soda": 2},
+  "gluten_free_base": {"sizes": ["medium"], "extra": 3},
+  "delivery_streets": {"Elm Street": 30, "Oak Avenue": 35, "Mill Lane": 35, "Station Road": 40, "Park Road": 30},
+  "pickup_minutes": 20,
+  "delivery_fee": 3,
+  "free_delivery_from": 30
+}

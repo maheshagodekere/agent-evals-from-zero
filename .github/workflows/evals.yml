@@ -1,0 +1,38 @@
+# Runs the eval on every pull request.
+# Job 1 is free: the tests, and the fake "perfect" agent must score 100% (if not, a change broke the harness or the checks).
+# Job 2 costs money (about 2 cents), so it runs only when a maintainer adds the label "run-evals",
+# and never for pull requests from forks (GitHub gives no secrets to those).
+name: evals
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+jobs:
+  free:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tests (no key, no cost)
+        run: python -m unittest discover -s tests -t .
+      - name: The checks give a perfect agent 100%
+        run: python run_eval.py --model fake-perfect --cases evals/cases-100.jsonl --quiet --min-score 1.0
+
+  real:
+    needs: free
+    if: >-
+      contains(github.event.pull_request.labels.*.name, 'run-evals') &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 20 cases x 1 run with Claude Haiku 5.5, at most $0.50, fail below 85%
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python run_eval.py --model claude-haiku-5-5 --cases evals/cases.jsonl --runs 1 --max-cost 0.50 --min-score 0.85 --quiet

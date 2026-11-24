@@ -1,0 +1,11 @@
+{
+ "check": "all",
+ "cases": 100,
+ "runs": 100,
+ "runs_per_case": 1,
+ "pass_rate": 1.0,
+ "range95": [
+  1.0,
+  1.0
+ ]
+}

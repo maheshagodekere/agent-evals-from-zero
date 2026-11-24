@@ -1,0 +1,16 @@
+{
+ "argv": [
+  "--model",
+  "fake-nothing",
+  "--cases",
+  "evals/cases-100.jsonl",
+  "--out",
+  "results",
+  "--name",
+  "e1-fake-nothing",
+  "--max-cost",
+  "5",
+  "--quiet"
+ ],
+ "started": "2026-11-21 13:00:49"
+}

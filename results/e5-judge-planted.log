@@ -1,0 +1,7 @@
+batch msgbatch_01XjtzgZBf5c7DYbgTY2R44P: 40 requests sent
+  {'processing': 40, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 40, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 40, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 40, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 40, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+wrote results/e4-haiku45-80x3/judge-planted.jsonl (40 verdicts); study total $2.7936

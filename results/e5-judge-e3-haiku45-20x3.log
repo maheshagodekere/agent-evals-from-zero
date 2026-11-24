@@ -1,0 +1,7 @@
+batch msgbatch_01FhF1iQiTsjqu8vJNqTv4RC: 60 requests sent
+  {'processing': 60, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 60, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 60, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 60, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 60, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+wrote results/e3-haiku45-20x3/judged.jsonl (60 verdicts); study total $2.8599

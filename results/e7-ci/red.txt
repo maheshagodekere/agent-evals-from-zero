@@ -1,0 +1,13 @@
+$ python run_eval.py --model fake-sloppy --cases evals/cases-100.jsonl --quiet --min-score 1.0
+
+fake-sloppy-cases-100-x1   spent in this study so far: $0.0000 (cap $1.00)
+
+outcome         55.0%   95% range 45.0% to 65.0%
+looked_first    15.0%   95% range 8.0% to 22.0%
+told_total     100.0%   95% range 100.0% to 100.0%
+all             15.0%   95% range 8.0% to 22.0%
+
+100 cases x 1 runs = 100 runs
+
+FAIL: score 15.0% is below the minimum 100.0%
+exit code: 1

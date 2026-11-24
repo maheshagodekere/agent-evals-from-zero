@@ -1,0 +1,18 @@
+{
+ "check": "all",
+ "cases": 80,
+ "runs": 240,
+ "runs_per_case": 3,
+ "pass_rate": 0.9125,
+ "range95": [
+  0.8583333333333332,
+  0.9583333333333334
+ ],
+ "pass@3": 0.975,
+ "pass^3": 0.8625,
+ "cases_always_pass": 69,
+ "cases_always_pass_wilson95": [
+  0.7703270280036946,
+  0.9214536632044886
+ ]
+}

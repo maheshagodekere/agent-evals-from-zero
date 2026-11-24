@@ -1,0 +1,9 @@
+
+e4-haiku45-80x3   spent in this study so far: $2.5099 (cap $5.00)
+
+outcome         91.2%   95% range 85.8% to 95.8%   pass@3 97.5%   pass^3 86.2%
+looked_first   100.0%   95% range 100.0% to 100.0%   pass@3 100.0%   pass^3 100.0%
+told_total     100.0%   95% range 100.0% to 100.0%   pass@3 100.0%   pass^3 100.0%
+all             91.2%   95% range 85.8% to 95.8%   pass@3 97.5%   pass^3 86.2%
+
+80 cases x 3 runs = 240 runs

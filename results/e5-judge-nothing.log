@@ -1,0 +1,4 @@
+batch msgbatch_019zKPBg1F7HE1tiepZB8Ezs: 100 requests sent
+  {'processing': 100, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 100, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+wrote results/e1-fake-nothing/judged.jsonl (100 verdicts); study total $2.6661

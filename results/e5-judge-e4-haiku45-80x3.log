@@ -1,0 +1,7 @@
+batch msgbatch_012uRku4UCUJ72sgiXhhKzrb: 240 requests sent
+  {'processing': 240, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 240, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 240, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 240, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+  {'processing': 240, 'succeeded': 0, 'errored': 0, 'canceled': 0, 'expired': 0}
+wrote results/e4-haiku45-80x3/judged.jsonl (240 verdicts); study total $3.3554

@@ -1,0 +1,19 @@
+{
+ "argv": [
+  "--model",
+  "claude-haiku-4-5-20251001",
+  "--cases",
+  "evals/cases.jsonl",
+  "--runs",
+  "1",
+  "--out",
+  "results",
+  "--name",
+  "e2-pilot-haiku45",
+  "--max-cost",
+  "5",
+  "--workers",
+  "4"
+ ],
+ "started": "2026-11-21 13:01:26"
+}
