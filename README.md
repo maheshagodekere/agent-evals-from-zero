@@ -1,6 +1,6 @@
 # AI Evals Hands-On: Your First Agent Eval, From Zero
 
-The code and every saved run behind the video *AI Evals Hands-On: Your First Agent Eval, From Zero* on
+The code and every saved run behind the video [*I Built an AI Agent Eval From Zero*](https://youtu.be/e9ClXY_OXwE) on
 [my YouTube channel](https://www.youtube.com/@maheshagodekere).
 
 An agent eval has five parts: **a case** (one test, as data), **a harness** (the code that runs the agent's tool loop), **a trace**
