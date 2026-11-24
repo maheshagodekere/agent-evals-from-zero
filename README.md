@@ -6,11 +6,11 @@ The code and every saved run behind the video *AI Evals Hands-On: Your First Age
 An agent eval has five parts: **a case** (one test, as data), **a harness** (the code that runs the agent's tool loop), **a trace**
 (everything that happened), **graders** (checks that read the trace), and **a score** over many cases and many runs. This repo
 builds all five from zero, for a small agent everyone understands: the order assistant of a made-up pizza shop, Hilltop Pizza.
-Python standard library only. Fake agents let you run everything with no API key and no cost.
+Python standard library only. Replay all saved runs and fake agents locally; bring your own API key only for live model runs.
 
 ## Contents
 
-1. [Quick start (no API key, no cost)](#1-quick-start-no-api-key-no-cost)
+1. [Quick start (replay saved runs & fake agents)](#1-quick-start-replay-saved-runs--fake-agents)
 2. [What is inside](#2-what-is-inside)
 3. [The five parts](#3-the-five-parts)
 4. [The experiment and its results](#4-the-experiment-and-its-results)
@@ -24,7 +24,7 @@ Python standard library only. Fake agents let you run everything with no API key
 12. [Sources](#12-sources)
 13. [License](#13-license)
 
-## 1. Quick start (no API key, no cost)
+## 1. Quick start (replay saved runs & fake agents)
 
 ```sh
 git clone https://github.com/maheshagodekere/agent-evals-from-zero.git
