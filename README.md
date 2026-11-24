@@ -10,7 +10,7 @@ Python standard library only. Replay all saved runs and fake agents locally; bri
 
 ## Contents
 
-1. [Quick start (replay saved runs & fake agents)](#1-quick-start-replay-saved-runs--fake-agents)
+1. [Quick start — two ways to run](#1-quick-start--two-ways-to-run)
 2. [What is inside](#2-what-is-inside)
 3. [The five parts](#3-the-five-parts)
 4. [The experiment and its results](#4-the-experiment-and-its-results)
@@ -24,21 +24,61 @@ Python standard library only. Replay all saved runs and fake agents locally; bri
 12. [Sources](#12-sources)
 13. [License](#13-license)
 
-## 1. Quick start (replay saved runs & fake agents)
+## 1. Quick start — two ways to run
+
+A live AI agent always talks to a model through an API. To make this repo easy to inspect before spending anything, every real Claude run from the video is saved in `results/`, and three fake agents are included to test the harness and graders offline.
+
+| Mode | Needs API key? | What you can run |
+|---|---|---|
+| **1. Offline replay & fake agents** | **No** ($0) | Replay all 300 saved real Claude conversations from `results/`, run the harness + checks with built-in fake agents (`nothing`, `perfect`, `sloppy`), recompute all numbers, and run unit tests. |
+| **2. Live LLM eval & AI judge** | **Yes** (`ANTHROPIC_API_KEY`) | Call live Claude models through `harness.py`, `run_eval.py`, and `judge.py` with a built-in `--max-cost` spend cap (default `$1.00`). |
+
+Clone once (Python 3.10+, zero packages to install — `requirements.txt` is empty on purpose):
 
 ```sh
 git clone https://github.com/maheshagodekere/agent-evals-from-zero.git
 cd agent-evals-from-zero
-
-python3 replay.py case P09                                   # one case: a line of JSON
-python3 replay.py fake P11 --agent nothing                   # a fake agent that does nothing... and passes
-python3 replay.py conv results/e3-haiku45-20x3 P09 --rep 1   # a saved real conversation and its checks
-python3 replay.py eval results/e3-haiku45-20x3               # a saved eval: 20 cases x 3 runs, then the score
-python3 run_eval.py --model fake-perfect                     # run the eval live with the fake perfect agent
-python3 -m unittest discover -s tests -t .                   # the tests
 ```
 
-Python 3.10 or newer. Nothing to install (`requirements.txt` is empty on purpose).
+### Way 1: Without an API key (replay saved Claude runs & fake agents)
+
+```sh
+# 1. Inspect one test case (a single line of JSON)
+python3 replay.py case P09
+
+# 2. Run the built-in fake "do-nothing" agent locally (no LLM call) — and watch it pass
+python3 replay.py fake P11 --agent nothing
+
+# 3. Replay a saved real Claude Haiku 4.5 conversation from results/ (step by step, with checks)
+python3 replay.py conv results/e3-haiku45-20x3 P09 --rep 1
+
+# 4. Replay an entire saved Claude eval run (20 cases x 3 runs = 60 saved traces + score)
+python3 replay.py eval results/e3-haiku45-20x3
+
+# 5. Run the full harness live with the fake perfect agent (no LLM call, must score 100%)
+python3 run_eval.py --model fake-perfect
+
+# 6. Recompute every number in the video from the saved runs, and run all unit tests
+python3 analyze.py
+python3 -m unittest discover -s tests -t .
+```
+
+### Way 2: With an Anthropic API key (run live Claude models)
+
+```sh
+export ANTHROPIC_API_KEY="your-key-here"
+
+# Small live run: 20 cases x 1 run on Claude Haiku 5.5 (about $0.02; --max-cost defaults to $1.00)
+python3 run_eval.py --model claude-haiku-5-5 --runs 1
+
+# Full live run: 100 cases x 3 runs with a $1 hard spend cap
+python3 run_eval.py --model claude-haiku-5-5 --cases evals/cases-100.jsonl --runs 3 --max-cost 1
+
+# Score your new live run (pass rate, pass@3, pass^3, 95% confidence range)
+python3 score.py runs/claude-haiku-5-5-cases-100-x3
+```
+
+See [Section 5](#5-run-it-with-a-real-model) for per-run costs, Keychain setup on macOS, and running the live AI judge.
 
 ## 2. What is inside
 
