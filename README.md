@@ -1,6 +1,6 @@
 # AI Evals Hands-On: Your First Agent Eval, From Zero
 
-The code and every saved run behind the video [*I Built an AI Agent Eval From Zero*](https://youtu.be/e9ClXY_OXwE) on
+The code and every saved run behind the video [*I Built an AI Agent Eval From Zero*](https://youtu.be/WIOsDPb_AtY) on
 [my YouTube channel](https://www.youtube.com/@maheshagodekere).
 
 An agent eval has five parts: **a case** (one test, as data), **a harness** (the code that runs the agent's tool loop), **a trace**
@@ -74,6 +74,10 @@ python3 run_eval.py --model claude-haiku-5-5 --runs 1
 # Full live run: 100 cases x 3 runs with a $1 hard spend cap
 python3 run_eval.py --model claude-haiku-5-5 --cases evals/cases-100.jsonl --runs 3 --max-cost 1
 
+# Repeat the video's first real run: Claude Haiku 4.5, 20 cases x 3 runs (about $0.48). Haiku 5.5 passed all 20 in the pilot,
+# so the video uses the older model; your numbers will differ a little from mine.
+python3 run_eval.py --model claude-haiku-4-5-20251001 --runs 3 --max-cost 1
+
 # Score your new live run (pass rate, pass@3, pass^3, 95% confidence range)
 python3 score.py runs/claude-haiku-5-5-cases-100-x3
 ```
@@ -132,7 +136,7 @@ recomputes every number from the saved runs into `results/numbers.json`. The pla
 | E6 | Reading all 27 failures | 9 orders after closing · 6 SAVE5 under its $25 minimum · 1 harness limit (asked for a zip code; the scripted customer answers once) · 11 my answer key (P17: the agent offered a valid coupon the rules allow) | $0 |
 | E6 | Answer key v2 (P17 fixed, nothing re-run) | **94.7%** (284/300) · range 90.7% to 98.0% · pass@3 98% · pass^3 91% | $0 |
 | E5 | AI judge (Claude Sonnet 5.5) on the 300 runs | 14 runs passed every code check but told the customer something false (mostly the delivery fee) · code + judge 90.0% (270/300) · do-nothing agent with the judge: **0%** | $1.11 |
-| E5 | Testing the judge | planted mistakes caught 18 of 20 (the 2 misses were weak breaks of mine) · untouched good runs 19 of 20 (the 20th really was wrong) · my labels on 30 runs: 88 of 90 answers agree | in E5 |
+| E5 | Testing the judge | planted mistakes caught 18 of 20 (the 2 misses were weak breaks of mine) · untouched good runs 19 of 20 (the 20th really was wrong) · labels on 30 runs (written by Claude for me, see the preregistration, Addendum 5): 88 of 90 answers agree | in E5 |
 | E7 | CI with the fake agents | perfect: exit code 0 · sloppy: exit code 1 ("15.0% is below the minimum 100.0%") | $0 |
 
 The whole study cost **$3.62** (the Haiku 5.5 style rewrites $0.01 included), under a hard cap of $5.
@@ -217,9 +221,11 @@ and that every saved run re-scores to the same result with today's code.
 - The main runs use Claude Haiku 4.5 because Claude Haiku 5.5 passed all 20 pilot cases (the rule was written before the
   pilot). A newer model scores higher on this simple shop.
 - The answer key was corrected after the results (P17). Both scores are reported; the saved runs keep their original checks.
-- The labels for the judge test are one person's, on 30 runs that were nearly all fine, so 88 of 90 says little about rare
+- The labels for the judge test were written by Claude for me (preregistration, Addendum 5), on 30 runs that were nearly all fine, so 88 of 90 says little about rare
   mistakes. The planted mistakes were mine too, and two of them were too weak.
 - Runs of the same case are not independent: averages are per case first, and the ranges resample cases.
+- The 100 cases are 20 situations, each written 5 ways. Resampling the 20 situations instead of the 100 cases gives a wider
+  range for the 91.0%: about 81% to 100% (not 86.0% to 95.3%). More wordings add little certainty; new situations would.
 - The spend cap is checked before every call, but separate processes running at the same time each read the ledgers when they
   start, so the cap is approximate when runs overlap. (The total stayed at $3.62 of $5.)
 - Models change. Re-running gives different numbers; the saved runs are the record.
